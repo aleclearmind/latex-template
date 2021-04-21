@@ -1,0 +1,93 @@
+\documentclass[twoside,openright,english]{article}
+
+%
+% Packages
+%
+\usepackage{algorithm2e}
+\usepackage[T1]{fontenc}
+\usepackage[table]{xcolor}
+\usepackage[twoside=true]{geometry}
+\usepackage{url}
+\usepackage{inconsolata}
+\usepackage{lscape}
+
+%
+% PDF
+%
+\usepackage[
+  pdfusetitle={},
+  pdfauthor={},
+  pdfkeywords={},
+  pdfcreator={},
+  pdfproducer={},
+  hidelinks
+]{hyperref}
+\pdftrailerid{}
+\pdfsuppressptexinfo15
+
+%
+% Common styling stuff
+%
+
+% My beloved \compactpar
+\newcommand{\compactpar}[1]{
+  \smallskip {\noindent \textbf{#1}}\ }
+
+% Temporary macros
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+% Autoref configuration
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\chapterautorefname}{Chapter}
+\renewcommand*{\algorithmautorefname}{Algorithm}
+\newcommand{\subListingautorefname}{Listing}
+\newcommand{\subtableautorefname}{Table}
+\newcommand{\subfigureautorefname}{Figure}
+
+%
+% Configurables
+%
+
+% Remove `noframe` to show the frame
+\usepackage[noframe]{showframe}
+
+\begin{document}
+
+%
+% Title page
+%
+
+%
+% Table of Contents
+%
+\setcounter{page}{1}
+\tableofcontents{}
+
+\section*{Introduction}
+
+See \autoref{sec:section-1}.
+
+\section{First Section}
+\label{sec:section-1}
+
+\todo{Write the document}
+
+\label{test}
+\autoref{test}
+\cite{revng}
+
+%
+% Bibliography
+%
+\bibliographystyle{plain}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{biblio}
+
+%
+% Appendix
+%
+
+% \appendix
+
+\end{document}
