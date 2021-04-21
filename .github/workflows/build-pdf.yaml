@@ -1,0 +1,15 @@
+name: build-pdf
+on: [push]
+jobs:
+  build-pdf:
+    runs-on: ubuntu-20.04
+    container: tianon/latex
+    steps:
+      - uses: actions/checkout@v2
+      - run: apt-get update && apt-get install -y ninja-build cmake
+      - run: mkdir build && cd build && cmake .. -GNinja
+      - run: ninja -C build
+      - uses: actions/upload-artifact@v2
+        with:
+          path: |
+            build/main.pdf
